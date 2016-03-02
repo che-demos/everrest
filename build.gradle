@@ -1,12 +1,24 @@
 apply plugin: 'java'
 apply plugin: 'idea'
+apply plugin: 'war'
+apply plugin: 'org.akhikhl.gretty'
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'org.akhikhl.gretty:gretty:+'
+    }
+}
 
 repositories {
     jcenter()
 }
 
-
 dependencies {
     // compile 'org.slf4j:slf4j-api:1.7.13'
+//    compile ''
+    compile 'org.everrest:everrest-core:1.12.0'
     testCompile 'junit:junit:4.12'
 }
