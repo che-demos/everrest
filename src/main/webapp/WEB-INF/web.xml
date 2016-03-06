@@ -5,7 +5,7 @@
     <display-name>user-service</display-name>
     <context-param>
         <param-name>javax.ws.rs.Application</param-name>
-        <param-value>com.thoughtworks.che.sample.UserApplication</param-value>
+        <param-value>com.thoughtworks.che.user.UserApplication</param-value>
     </context-param>
     <context-param>
         <param-name>org.everrest.scan.components</param-name>
@@ -19,7 +19,7 @@
     </listener>
 
     <listener>
-        <listener-class>com.thoughtworks.che.sample.UserTestListener</listener-class>
+        <listener-class>com.thoughtworks.che.listener.WebSocketListener</listener-class>
     </listener>
 
     <listener>

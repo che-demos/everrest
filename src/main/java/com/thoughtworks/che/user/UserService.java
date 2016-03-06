@@ -1,4 +1,4 @@
-package com.thoughtworks.che.sample;
+package com.thoughtworks.che.user;
 
 import org.everrest.core.impl.provider.json.JsonUtils;
 import org.everrest.websockets.WSConnectionContext;

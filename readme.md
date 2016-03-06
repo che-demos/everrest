@@ -1,11 +1,11 @@
 # everrest
 
-## A simplest everrest demo
+## A simplest everrest webkit demo
 
 ## How to run 
 
 ```
-./gradlew jettyrun
+./gradlew tomcatrun
 ```
 
-## access http://{server}/users/1
+## access http://{server}/page.html

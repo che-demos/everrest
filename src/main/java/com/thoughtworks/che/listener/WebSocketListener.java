@@ -1,4 +1,4 @@
-package com.thoughtworks.che.sample;
+package com.thoughtworks.che.listener;
 
 import org.everrest.websockets.ServerContainerInitializeListener;
 import org.everrest.websockets.WSConnectionImpl;
@@ -6,12 +6,9 @@ import org.everrest.websockets.WSConnectionImpl;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
-import javax.servlet.http.HttpSession;
 import javax.websocket.Decoder;
 import javax.websocket.DeploymentException;
 import javax.websocket.Encoder;
-import javax.websocket.HandshakeResponse;
-import javax.websocket.server.HandshakeRequest;
 import javax.websocket.server.ServerContainer;
 import javax.websocket.server.ServerEndpointConfig;
 import java.util.LinkedList;
@@ -19,7 +16,7 @@ import java.util.List;
 
 import static javax.websocket.server.ServerEndpointConfig.Builder.create;
 
-public class UserTestListener implements ServletContextListener {
+public class WebSocketListener implements ServletContextListener {
 
     ServerEndpointConfig wsServerEndpointConfig;
     ServerEndpointConfig eventbusServerEndpointConfig;
@@ -44,24 +41,6 @@ public class UserTestListener implements ServletContextListener {
         } catch (DeploymentException e) {
             e.printStackTrace();
         }
-    }
-
-    private ServerEndpointConfig.Configurator createConfigurator() {
-        return new ServerEndpointConfig.Configurator() {
-            @Override
-            public void modifyHandshake(ServerEndpointConfig sec, HandshakeRequest request, HandshakeResponse response) {
-                super.modifyHandshake(sec, request, response);
-                final HttpSession httpSession = (HttpSession) request.getHttpSession();
-            }
-        };
-    }
-
-    private ServerEndpointConfig createEventbusServerEndpointConfig(ServletContext servletContext) {
-        return null;
-    }
-
-    private ServerEndpointConfig createWsServerEndpointConfig(ServletContext servletContext) {
-        return null;
     }
 
     @Override

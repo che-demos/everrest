@@ -1,4 +1,4 @@
-package com.thoughtworks.che.sample;
+package com.thoughtworks.che.user;
 
 import javax.ws.rs.core.Application;
 import java.util.HashSet;
