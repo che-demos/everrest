@@ -17,8 +17,7 @@ repositories {
 }
 
 dependencies {
-    // compile 'org.slf4j:slf4j-api:1.7.13'
-//    compile ''
     compile 'org.everrest:everrest-core:1.12.0'
+    compile 'org.everrest:everrest-websockets:1.12.0'
     testCompile 'junit:junit:4.12'
 }

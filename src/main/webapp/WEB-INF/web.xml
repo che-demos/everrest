@@ -12,24 +12,38 @@
         <param-value>1</param-value>
     </context-param>
 
-    <!--<listener>-->
-        <!--<listener-class>org.everrest.sample.book.BookServiceBootstrap</listener-class>-->
-    <!--</listener>-->
+
+
     <listener>
         <listener-class>org.everrest.core.servlet.EverrestInitializedListener</listener-class>
     </listener>
-    <!--<listener>-->
-        <!--<listener-class>org.everrest.websockets.ServerContainerInitializeListener</listener-class>-->
-    <!--</listener>-->
-    <!--<listener>-->
-        <!--<listener-class>org.everrest.websockets.WSConnectionTracker</listener-class>-->
-    <!--</listener>-->
+
+    <listener>
+        <listener-class>com.thoughtworks.che.sample.UserTestListener</listener-class>
+    </listener>
+
+    <listener>
+        <listener-class>org.everrest.websockets.ServerContainerInitializeListener</listener-class>
+    </listener>
+
     <servlet>
         <servlet-name>EverrestServlet</servlet-name>
         <servlet-class>org.everrest.core.servlet.EverrestServlet</servlet-class>
     </servlet>
+    <!--<servlet>-->
+        <!--<servlet-name>home</servlet-name>-->
+        <!--<jsp-file>/*</jsp-file>-->
+    <!--</servlet>-->
+
+    <servlet-mapping>
+        <servlet-name>default</servlet-name>
+        <url-pattern>*.html</url-pattern>
+    </servlet-mapping>
+
     <servlet-mapping>
         <servlet-name>EverrestServlet</servlet-name>
-        <url-pattern>/*</url-pattern>
+        <url-pattern>/api/*</url-pattern>
     </servlet-mapping>
+
+
 </web-app>
